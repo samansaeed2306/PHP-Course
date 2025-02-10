@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULLING FROM PHP</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{            
+            async function loadTasks(){
+                const response = await fetch('tasks.php');
+                const tasks = await response.json();
+
+                tasks.forEach(task => {
+                    document.write(task.task + "<br>");
+                });
+
+            }
+
+            loadTasks();
+       } )
+
+
+    </script>
+</body>
+</html>
