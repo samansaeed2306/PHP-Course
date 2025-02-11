@@ -9,6 +9,9 @@ variable.
    ii. snake_case
    iii. PascalCase
 
+5. Loosely typed data 
+6. It can transfer the value to variable 
+
 */
 
 $name = "Saman";
@@ -21,3 +24,10 @@ $name = "Saman Saeed";
 // It will change its type too
 $name = 3;
 var_dump($name);
+
+echo "<br>";
+
+// 6th point's example is shown here. All three will have same value
+ $fullName1 = $fullName2 = $fullName3 = "Ms Saman Saeed";
+
+ var_dump($fullName1);
