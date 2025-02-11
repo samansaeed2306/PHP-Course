@@ -1,5 +1,6 @@
 <?php
 /*Variables in php:
+0. Must begin with a letter or underscore. Cannot start with a number.
 1. They donot need data types at the time of declaration or definition/initialization.
 2. They can be overwritten if have the same (case-sensitive) letters
 3. If they have different cases but the word/name of the var is same, the varibale will be considered as a different 
