@@ -16,5 +16,6 @@ echo $name . " is a " . $profession . "<br>";
 
 //SERVER to get info about the server currently in use.
 echo "Server name: " . $_SERVER["SERVER_NAME"] . "<br>";
-echo "Server port:" . $_SERVER["SERVER_PORT"] . "<br>";
-echo "Server protocol:" . $_SERVER["SERVER_PROTOCOL"] . "<br>";
+echo "Server port: " . $_SERVER["SERVER_PORT"] . "<br>";
+echo "Server protocol: " . $_SERVER["SERVER_PROTOCOL"] . "<br>";
+echo "Server admin: " . $_SERVER["SERVER_ADMIN"] . "<br>";
