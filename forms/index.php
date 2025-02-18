@@ -7,11 +7,12 @@
 </head>
 <body>
     <h2>Basic Forms </h2>
-    <form action="process.php">
+    <!-- By default the req method is GET, we can have POST too. -->
+    <form action="process.php" method="POST">
         <input name="username" type=text>
         <input name="password" type=password>
         <input name="status" type=text>
-        <input name="username" type=submit>
+        <input name="SUBMIT" type=submit>
     </form>
 </body>
 </html>
