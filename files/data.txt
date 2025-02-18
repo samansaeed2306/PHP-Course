@@ -3,3 +3,4 @@ fclose(): Closes a file
 fread(): Reads a file 
 fwrite(): Writes to file 
 
+Hello I am a new line
