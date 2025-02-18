@@ -1,0 +1,5 @@
+fopen(): Opens a file
+fclose(): Closes a file 
+fread(): Reads a file 
+fwrite(): Writes to file 
+
