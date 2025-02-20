@@ -14,7 +14,7 @@ session_start(); //Generates SESSION ID
 echo $_SESSION["USERNAME"];
 ?>
 
-<a href="about.php">About</a>
+<a href="login.php">Login</a>
 <a href="contact.php">Contact</a>
 
 
