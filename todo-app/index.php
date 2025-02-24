@@ -13,7 +13,9 @@ $db = $database->connect();
 
 $todo = new Task($db);
 
+// var_dump($todo->read());
 
+$tasks = $todo->read();
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if (isset($_POST['add_task'])){
@@ -37,6 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <!-- Display Tasks -->
 <ul>
+    <?php while($task = $tasks->fetch_assoc()):  ?>
     <li class="completed">
         <span class="completed">Sample Task</span>
         <div>
@@ -76,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             </form>
         </div>
     </li>
+    <?php endwhile; ?>
 </ul>
 
 </div>
