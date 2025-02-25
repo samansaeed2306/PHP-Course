@@ -58,6 +58,14 @@ $tasks = $todo->read();
 
 </div>
 <?php endif; ?>
+<div id="confirmModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <p>Are you sure you want to delete?</p>
+    <button id="confirmYes">Yes</button>
+    <button id="confirmNo">No</button>
+  </div>
+</div>
+
 <div class=container>
 <h1>Todo App</h1>
 
@@ -88,7 +96,7 @@ $tasks = $todo->read();
                 
             <?php endif; ?>
             <!-- Delete Task -->
-            <form method="POST" style="display:inline;">
+            <form onsubmit="return confirmDel()" method="POST" style="display:inline;">
                 <input type="hidden" name="id" value="<?php echo $task['id'] ?>">
                 <button class="delete" type="submit" name="delete_task">Delete</button>
             </form>
@@ -100,7 +108,11 @@ $tasks = $todo->read();
 </ul>
 
 </div>
-
+<script>
+ function confirmDel(){
+   return confirm("Are you sure you want to delete?");
+}
+ </script>
 
 
 <?php
