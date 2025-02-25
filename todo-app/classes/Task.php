@@ -29,4 +29,90 @@ public function read (){
     return $result;
     
 }
+
+public function complete($id){
+    var_dump($id);
+   
+    $is_completed = 1;
+
+    // Correct SQL query with placeholders
+    $query = "UPDATE " . $this->table . " SET is_completed = ? WHERE id = ?";
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $this->conn->error);
+    }
+
+    // Bind parameters correctly for MySQLi
+    $stmt->bind_param("ii", $is_completed, $id);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+    
+    
+
+}
+
+public function undo($id){
+    var_dump($id);
+   
+    $is_completed = 0;
+
+    // Correct SQL query with placeholders
+    $query = "UPDATE " . $this->table . " SET is_completed = ? WHERE id = ?";
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $this->conn->error);
+    }
+
+    // Bind parameters correctly for MySQLi
+    $stmt->bind_param("ii", $is_completed, $id);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+    
+    
+
+}
+public function delete($id){
+    var_dump($id);
+   
+    // completed = 0;$is_
+
+    // Correct SQL query with placeholders
+    $query = "DELETE FROM " . $this->table . " WHERE id = ?";
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $this->conn->error);
+    }
+
+    // Bind parameters correctly for MySQLi
+    $stmt->bind_param("i", $id);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+    
+    
+
+}
 }
