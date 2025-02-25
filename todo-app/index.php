@@ -14,36 +14,50 @@ $db = $database->connect();
 $todo = new Task($db);
 
 // var_dump($todo->read());
-
+session_start();
 $tasks = $todo->read();
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if (isset($_POST['add_task'])){
         $todo->task = $_POST['task'];
         $todo->create();
-        echo "Task created";
-
+        // echo "Task created";
+        $_SESSION["message"]="Task created successfully";
+        $_SESSION["msg_type"]="success";
     }
     elseif(isset($_POST['complete_task'])){
         // echo "HELOO";
         // echo $_POST['id'];
         $todo->complete($_POST['id']);
-        echo "Task Completed";
+        $_SESSION["message"]="Task completed successfully";
+        $_SESSION["msg_type"]="success";
+        // echo "Task Completed";
     }
     elseif(isset($_POST['undo_complete_task'])){
         $todo->undo($_POST['id']);
-        echo "Task Undone";
+        $_SESSION["message"]="Task undone successfully";
+        $_SESSION["msg_type"]="success";
+        // echo "Task Undone";
      }
      elseif(isset($_POST['delete_task'])){
         $todo->delete($_POST['id']);
-        echo "Task Deleted";
+        $_SESSION["message"]="Task deleted successfully";
+        $_SESSION["msg_type"]="success";
      }
      
 }
 $tasks = $todo->read();
 ?>
+<?php if(isset($_SESSION["message"])):?>
+<div class="notification-container">
+    <div class="notification <?php echo $_SESSION["msg_type"]?>">
+    <?php echo $_SESSION["message"] ?>
+    <?php unset($_SESSION["message"]); ?>
+            
+    </div>
 
-
+</div>
+<?php endif; ?>
 <div class=container>
 <h1>Todo App</h1>
 

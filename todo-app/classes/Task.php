@@ -31,7 +31,7 @@ public function read (){
 }
 
 public function complete($id){
-    var_dump($id);
+    // var_dump($id);
    
     $is_completed = 1;
 
@@ -60,7 +60,7 @@ public function complete($id){
 }
 
 public function undo($id){
-    var_dump($id);
+    // var_dump($id);
    
     $is_completed = 0;
 
@@ -88,7 +88,7 @@ public function undo($id){
 
 }
 public function delete($id){
-    var_dump($id);
+    // var_dump($id);
    
     // completed = 0;$is_
 
